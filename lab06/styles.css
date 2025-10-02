@@ -6,11 +6,33 @@ body {
 }
 
 h1 {
-    color: red;
+    color: hotpink;
     text-align: center;
 }
 
 p {
     font-size: 16px;
     color: #333;
+}
+/* Table styles */
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Style header row */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Zebra row style */
+.evenrow {
+    background-color: #e6f7ff; /* light blue, pick your own color */
 }
