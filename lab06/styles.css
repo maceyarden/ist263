@@ -31,8 +31,12 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+/* Zebra row styling (even rows) */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
+/* Class-based zebra row (for manual markup) */
 .evenrow {
-    background-color:purple;
-    .special {color:purple}
+    background-color: #f9f9f9;
 }
