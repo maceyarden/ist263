@@ -32,3 +32,65 @@ nav a:hover {
   background-color: #374151;   /* site navigation hover highlight */
 }
 /* placeholder hex values replaced with a cohesive color palette */
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse; /* removes double borders */
+  margin: 1rem 0;
+}
+
+table, th, td {
+  border: 1px solid #e6edf3; /* subtle border color */
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+/* ===== Form inputs ===== */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  border: 1px solid #cbd5e1; /* neutral input border */
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* make focus visible for keyboard users */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb; /* blue accent */
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+}
+
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+}
+
+/* responsive table fallback */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr { display: block; }
+  th { display: none; }
+  td { border: none; border-bottom: 1px solid #e6edf3; padding-left: 0; }
+}
