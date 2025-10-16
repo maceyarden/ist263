@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Syracuse-style Footer (Flex)</title>
+<style>
+  :root{
+    --bg:#b9bec6;          /* light gray from screenshot */
+    --ink:#111;            /* body text */
+    --muted:#4b5563;       /* subtle text */
+    --link:#0b67ff;
+    --max:1100px;
+  }
+
+  body{margin:0;font-family:Georgia, "Times New Roman", serif;background:var(--bg);color:var(--ink);}
+
+  footer{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:24px 16px 12px;
+  }
+
+  /* TOP: address + phone */
+  .foot-top{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 32px;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .brand-block{
+    font-weight:700;
+    line-height:1.35;
+    min-width:260px;
+  }
+  .brand-block .phone{margin-top:10px;font-weight:600;}
+
+  /* MIDDLE: link columns */
+  .foot-grid{
+    display:flex;                 /* FLEX CONTAINER */
+    flex-wrap:wrap;               /* wrap to new lines as needed */
+    gap:24px 40px;
+    margin:10px 0 18px;
+  }
+  .col{
+    min-width:210px;
+    flex:1 1 220px;               /* grow/shrink; base width */
+  }
+  .col h3{
+    margin:0 0 8px 0;
+    font-size:1.05rem;
+    font-weight:700;
+  }
+  .col ul{list-style:none;margin:0;padding:0;}
+  .col li{margin:.35rem 0;}
+  a{color:var(--ink);text-decoration:none;}
+  a:hover{color:var(--link);text-decoration:underline;}
+
+  /* BOTTOM: social + legal row */
+  .foot-bottom{
+    display:flex;                 /* FLEX */
+    flex-wrap:wrap;
+    gap:12px 18px;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid rgba(0,0,0,.2);
+    padding-top:10px;
+    font-size:.95rem;
+  }
+  .social{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .social a{
+    display:inline-flex;
+    width:28px;height:28px;
+    align-items:center;justify-content:center;
+    border-radius:4px;
+    background:#000;              /* simple icon chip */
+    color:#fff;font-size:14px;line-height:1;
+  }
+  .legal{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 14px;
+    align-items:center;
+  }
+  .legal a{color:#0b67ff;}
+
+  /* Small screens: stack */
+  @media (max-width:700px){
+    .foot-bottom{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<footer aria-label="Site footer">
+  <!-- Address + phone -->
+  <div class="foot-top">
+    <div class="brand-block">
+      Syracuse University<br/>
+      900 South Crouse Ave.<br/>
+      Syracuse, NY 13244
+      <div class="phone">Phone: +1.315.443.1870</div>
+    </div>
+  </div>
+
+  <!-- Link columns -->
+  <div class="foot-grid">
+    <nav class="col" aria-label="Popular links">
+      <h3>Popular</h3>
+      <ul>
+        <li><a href="#">Academic Calendar</a></li>
+        <li><a href="#">Campus Map</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Libraries</a></li>
+        <li><a href="#">Majors and Minors</a></li>
+        <li><a href="#">Visits and Tours</a></li>
+      </ul>
+    </nav>
+
+    <nav class="col" aria-label="A–Z">
+      <h3>A–Z</h3>
+      <ul>
+        <li><a href="#">Find People</a></li>
+        <li><a href="#">Academic Departments</a></li>
+        <li><a href="#">Schools and Colleges</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Search</a></li>
+      </ul>
+    </nav>
+
+    <nav class="col" aria-label="Contact">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Financial Aid</a></li>
+        <li><a href="#">Emergency Contacts</a></li>
+        <li><a href="#">Human Resources</a></li>
+        <li><a href="#">Website Feedback</a></li>
+        <li><a href="#">Make a Gift</a></li>
+      </ul>
+    </nav>
+
+    <nav class="col" aria-label="Login">
+      <h3>Login</h3>
+      <ul>
+        <li><a href="#">MySlice</a></li>
+        <li><a href="#">BlackBoard</a></li>
+        <li><a href="#">Student Email</a></li>
+        <li><a href="#">Faculty and Staff Email</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Social + legal -->
+  <div class="foot-bottom">
+    <div class="social" aria-label="Social media">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="X/Twitter">x</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="Instagram">◎</a>
+    </div>
+
+    <div class="legal">
+      <span>© Syracuse University. Knowledge crowns those who seek her.</span>
+      <a href="#">Accessibility</a>
+      <a href="#">Accreditation</a>
+      <a href="#">Emergencies</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
