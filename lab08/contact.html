@@ -6,79 +6,96 @@
     <title>Contact</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<header>
+  <img src="../images/bio-banner.jpg" alt="Bio banner">
+</header>
 <body class="contact-page">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact Me</a>
-      <a href="skills.html">Skills</a>
-    </nav>
+    <div class="col card">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Me</a>
+        <a href="skills.html">Skills</a>
+      </nav>
+    </div>
+
+  <header class="banner">
+    <div class="col card">
+      <h1>Contact</h1>
+    </div>
+  </header>
 
     <main>
-      <h1>Contact</h1>
+      <div class="col card">
+        <h1>Contact</h1>
 
-      <form action="https://formspree.io/f/mvgbeplr" method="POST">
-        <fieldset>
-            <legend>Send a message</legend>
+        <div class="col card">
+          <form action="https://formspree.io/f/mvgbeplr" method="POST">
+            <fieldset>
+                <legend>Send a message</legend>
 
-            <p>
-                <label for="fname">First name</label><br>
-                <input type="text" id="fname" name="fname" required>
-            </p>
+                <p>
+                    <label for="fname">First name</label><br>
+                    <input type="text" id="fname" name="fname" required>
+                </p>
 
-            <p>
-                <label for="lname">Last name</label><br>
-                <input type="text" id="lname" name="lname" required>
-            </p>
+                <p>
+                    <label for="lname">Last name</label><br>
+                    <input type="text" id="lname" name="lname" required>
+                </p>
 
-            <p>
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" required>
-            </p>
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
 
-            <p>
-                <span>Gender</span><br>
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label>
-                <input type="radio" id="other" name="gender" value="Other">
-                <label for="other">Other</label>
-            </p>
+                <p>
+                    <span>Gender</span><br>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </p>
 
-            <p>
-                <label for="message">Message</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </p>
+                <p>
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
 
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </fieldset>
-      </form>
-
-      <section class="contact-info">
-        <p><strong>Macey Arden</strong></p>
-        <p>Syracuse University</p>
-        <p>900 South Crouse Ave, Syracuse, NY 13244</p>
-        <p><a href="mailto:maarden@syr.edu">maarden@syr.edu</a></p>
-
-        <p>
-          <a href="https://www.linkedin.com/in/macey-arden-325003292/" target="_blank" rel="noopener noreferrer">My LinkedIn Profile</a>
-        </p>
-
-        <p>
-          <img src="images/photo.jpg" alt="Macey Arden Photo" style="max-width:150px;height:auto;">
-        </p>
-
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.2282270912166!2d-76.13098522361732!3d43.03668877114674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f37c56920f01%3A0x6b4033b092a83232!2s900%20S%20Crouse%20Ave%2C%20Syracuse%2C%20NY%2013210!5e0!3m2!1sen!2sus!4v1694361517409!5m2!1sen!2sus" width="600" height="450" style="border:0;max-width:100%;height:auto;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </fieldset>
+          </form>
         </div>
-      </section>
+
+        <div class="col card contact-info">
+          <p><strong>Macey Arden</strong></p>
+          <p>Syracuse University</p>
+          <p>900 South Crouse Ave, Syracuse, NY 13244</p>
+          <p><a href="mailto:maarden@syr.edu">maarden@syr.edu</a></p>
+
+          <p>
+            <a href="https://www.linkedin.com/in/macey-arden-325003292/" target="_blank" rel="noopener noreferrer">My LinkedIn Profile</a>
+          </p>
+
+          <p>
+            <img src="images/photo.jpg" alt="Macey Arden Photo" style="max-width:150px;height:auto;">
+          </p>
+
+          <div class="map col card">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.2282270912166!2d-76.13098522361732!3d43.03668877114674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f37c56920f01%3A0x6b4033b092a83232!2s900%20S%20Crouse%20Ave%2C%20Syracuse%2C%20NY%2013210!5e0!3m2!1sen!2sus!4v1694361517409!5m2!1sen!2sus" width="600" height="450" style="border:0;max-width:100%;height:auto;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
 
     </main>
 
     <footer>
-      &copy; 2020 Macey Arden
+       <hr>
+        <p>&copy; 2025 Macey Arden</p>
+        <p class="motto">“First, solve the problem. Then, write the code.” – John Johnson</p>
     </footer>
-</body>
+  </body>
 </html>
