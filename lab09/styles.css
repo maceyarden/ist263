@@ -1,160 +1,118 @@
-STYLES.CSS
-   Lab 08  |  Stylesheet Template
-   Author: Macey Arden
-   ======================================== */
+/* ============ Base & Page Spacing ============ */
+:root {
+  --page-max: 1200px;
+  --gap: 24px;
+  --radius: 12px;
+}
 
-/* ----- Color Palette (Muted Earth Tones) -----
-Body background: #F4F1EA
-Text:            #4B3832
-Link:            #6B705C
-Headings:        #3D2B1F
-Nav background:  #E0D8C3
-Nav hover:       #A5A58D
-Nav link color:  #3D405B
------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-/* ===== Global Styles ===== */
-body {
-  background-color: #F4F1EA;  /* body background */
-  color: #4B3832;             /* text color */
-  font-family: system-ui, Arial, sans-serif;
-  line-height: 1.6;
+html, body {
   margin: 0;
   padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #fafafa;
 }
 
-h1, h2, h3 {
-  color: #3D2B1F;             /* heading color */
+/* Entire content area spacing away from browser edges (per lab) */
+.skills-layout {
+  /* FLEXBOX 2: one row, two columns */
+  display: flex;                    /* (Lab step: add the style to specify flexbox 2) */
+  gap: var(--gap);
+  max-width: var(--page-max);
+  margin: 40px auto;                /* separates from window edges */
+  padding: 0 20px;
 }
 
-a {
-  color: #6B705C;             /* link color */
-  text-decoration: none;
+/* Left 3/4, Right 1/4 using flex/flex-basis (lab requirement) */
+.skills-left {
+  flex: 3 1 0;                      /* 3 parts of the row */
+  min-width: 0;                     /* prevents overflow issues */
 }
 
-a:hover {
-  text-decoration: underline;
+.other-skills {
+  flex: 1 1 0;                      /* 1 part of the row */
 }
 
-/* ===== Banner (Header) ===== */
-.banner {
-  background-color: #E0D8C3;
-  color: #3D2B1F;
+/* ============ Centering ============ */
+/* One of the taught techniques: text-align for inline-level children */
+.centered {
   text-align: center;
-  padding: 60px 20px 40px;
-  border-bottom: 4px solid #A5A58D;
+  margin: 0;                        /* reset default */
 }
 
-.banner h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
+/* Additional margin to separate heading from content (lab spacing step) */
+#page-title {
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 
-.banner p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  color: #4B3832;
+/* Intro paragraph spacing (and extra credit alignment—kept inside .skills-left) */
+.intro {
+  margin-bottom: 24px;
+  font-size: 1rem;
+  color: #333;
 }
 
-/* ===== Navigation ===== */
-nav {
-  background-color: #E0D8C3;
-  padding: 10px;              /* box model: padding */
-  margin-bottom: 30px;        /* box model: margin-bottom */
+/* ============ FLEXBOX 1: Five-column skills row ============ */
+.skills-row {
+  display: flex;                    /* (Lab step: add a single style declaration for row) */
+  justify-content: space-between;   /* (Lab step: fix squished icons with justify-content) */
+  align-items: flex-start;
+  flex-wrap: nowrap;                /* five across on wide screens */
+  gap: 16px;                        /* additional spacing between items */
 }
 
-nav a {
-  color: #3D405B;             /* nav link color */
-  text-decoration: none;
-  padding: 4px 8px;           /* descendant selector */
+/* Skill card (each of the five inner divs) */
+.skill {
+  flex: 0 1 18%;                    /* roughly 5 across with breathing room */
+  text-align: center;               /* centers inline contents */
 }
 
-nav a:hover {
-  background-color: #A5A58D;  /* hover highlight */
-  border-radius: 4px;
-}
-
-/* ===== Footer ===== */
-footer {
-  padding: 0 16px;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-/* Clear floats */
-footer::after {
-  content: "";
+.skill-icon {
+  width: 80px;                      /* (Lab: size icons with width property) */
+  height: auto;
   display: block;
-  clear: both;
+  margin: 0 auto 8px;               /* line break effect + spacing below */
 }
 
-/* ===== Flexbox Layout (used in Contact Page) ===== */
-.row {
-  display: flex;             /* makes columns sit side by side */
-  gap: 20px;                 /* space between columns */
-  margin: 20px 16px;         /* spacing around rows */
+.skill-name {
+  display: inline-block;
+  font-weight: 600;
 }
 
-.col {
-  flex: 1 1 0;
+/* ============ Aside styling ============ */
+.other-skills {
+  background: #ffffff;
+  color: #111;
+  border-radius: var(--radius);     /* (Lab: curved corners) */
+  padding: 20px;                    /* (Lab: extra space so text doesn’t squish) */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
-.card {
-  background: #F4F1EA;       /* background color for boxes */
-  padding: 20px;             /* space inside containers */
-  border-radius: 12px;       /* rounded corners */
-  border: 1px solid #E0D8C3;
+.other-skills h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
 }
 
-/* Form Inputs */
-input, textarea, button {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
+.other-skills ul {
+  margin: 0;
+  padding-left: 18px;               /* room for list bullets */
 }
 
-button {
-  background-color: #E0D8C3;
-  cursor: pointer;
+/* ============ Responsive tweaks (optional but nice) ============ */
+@media (max-width: 900px) {
+  .skills-row { flex-wrap: wrap; }
+  .skill { flex: 1 1 calc(50% - 16px); } /* 2 per row */
 }
 
-button:hover {
-  background-color: #A5A58D;
-}
-
-/* Map Container */
-.map-wrap {
-  position: relative;
-  width: 100%;
-  min-height: 260px;
-}
-
-.map-wrap iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
-  border-radius: 8px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column;
-  }
-  .left, .right {
-    float: none;
-  }
-  footer p {
-    margin: 8px 0;
-  }
+@media (max-width: 640px) {
+  .skills-layout { flex-direction: column; } /* stack columns */
+  .skill { flex: 1 1 100%; }                 /* 1 per row for clarity */
+  .skill-icon { width: 72px; }
 }
