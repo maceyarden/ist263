@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Skills</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Your site nav would go here if you have one -->
+
+  <!-- FLEXBOX 2: page-level layout (Left: 3/4, Right: 1/4) -->
+  <div class="skills-layout">
+    <!-- Left column: heading, intro (extra credit), and FLEXBOX 1 (five skills) -->
+    <main class="skills-left" aria-labelledby="page-title">
+      <!-- Centered heading (use one of the taught centering techniques) -->
+      <h1 id="page-title" class="centered">Technical Skills</h1>
+
+      <!-- Intro text (extra credit: kept inside left column so it aligns with icons and not over the aside) -->
+      <section class="intro">
+        <p>
+          Below are five core technical skills I use most often, each paired with a simple icon.
+          The sidebar highlights additional skills I’m growing.
+        </p>
+        <p>
+          Click any icon area you’d like me to elaborate on during a portfolio review.
+        </p>
+      </section>
+
+      <!-- FLEXBOX 1: five-column skills row -->
+      <section class="skills-row" aria-label="Top skills">
+        <!-- Skill card 1 -->
+        <div class="skill">
+          <img src="images/html-icon.png" alt="HTML icon" class="skill-icon" />
+          <span class="skill-name">HTML</span>
+        </div>
+
+        <!-- Skill card 2 -->
+        <div class="skill">
+          <img src="images/css-icon.png" alt="CSS icon" class="skill-icon" />
+          <span class="skill-name">CSS</span>
+        </div>
+
+        <!-- Skill card 3 -->
+        <div class="skill">
+          <img src="images/js-icon.png" alt="JavaScript icon" class="skill-icon" />
+          <span class="skill-name">JavaScript</span>
+        </div>
+
+        <!-- Skill card 4 -->
+        <div class="skill">
+          <img src="images/git-icon.png" alt="Git icon" class="skill-icon" />
+          <span class="skill-name">Git/GitHub</span>
+        </div>
+
+        <!-- Skill card 5 -->
+        <div class="skill">
+          <img src="images/ux-icon.png" alt="UX icon" class="skill-icon" />
+          <span class="skill-name">UX Basics</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right column: aside -->
+    <aside class="other-skills" aria-labelledby="other-skills-title">
+      <h2 id="other-skills-title">Other Skills</h2>
+      <ul>
+        <li>Responsive Layout</li>
+        <li>Accessibility (a11y)</li>
+        <li>SEO Fundamentals</li>
+        <li>Figma Wireframing</li>
+        <li>Command Line Basics</li>
+      </ul>
+    </aside>
+  </div>
+
+</body>
+</html>

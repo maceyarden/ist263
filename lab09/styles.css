@@ -1,0 +1,160 @@
+STYLES.CSS
+   Lab 08  |  Stylesheet Template
+   Author: Macey Arden
+   ======================================== */
+
+/* ----- Color Palette (Muted Earth Tones) -----
+Body background: #F4F1EA
+Text:            #4B3832
+Link:            #6B705C
+Headings:        #3D2B1F
+Nav background:  #E0D8C3
+Nav hover:       #A5A58D
+Nav link color:  #3D405B
+------------------------------------------------ */
+
+/* ===== Global Styles ===== */
+body {
+  background-color: #F4F1EA;  /* body background */
+  color: #4B3832;             /* text color */
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #3D2B1F;             /* heading color */
+}
+
+a {
+  color: #6B705C;             /* link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Banner (Header) ===== */
+.banner {
+  background-color: #E0D8C3;
+  color: #3D2B1F;
+  text-align: center;
+  padding: 60px 20px 40px;
+  border-bottom: 4px solid #A5A58D;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.banner p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #4B3832;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #E0D8C3;
+  padding: 10px;              /* box model: padding */
+  margin-bottom: 30px;        /* box model: margin-bottom */
+}
+
+nav a {
+  color: #3D405B;             /* nav link color */
+  text-decoration: none;
+  padding: 4px 8px;           /* descendant selector */
+}
+
+nav a:hover {
+  background-color: #A5A58D;  /* hover highlight */
+  border-radius: 4px;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 0 16px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+/* Clear floats */
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Flexbox Layout (used in Contact Page) ===== */
+.row {
+  display: flex;             /* makes columns sit side by side */
+  gap: 20px;                 /* space between columns */
+  margin: 20px 16px;         /* spacing around rows */
+}
+
+.col {
+  flex: 1 1 0;
+}
+
+.card {
+  background: #F4F1EA;       /* background color for boxes */
+  padding: 20px;             /* space inside containers */
+  border-radius: 12px;       /* rounded corners */
+  border: 1px solid #E0D8C3;
+}
+
+/* Form Inputs */
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+button {
+  background-color: #E0D8C3;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #A5A58D;
+}
+
+/* Map Container */
+.map-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+  .left, .right {
+    float: none;
+  }
+  footer p {
+    margin: 8px 0;
+  }
+}
