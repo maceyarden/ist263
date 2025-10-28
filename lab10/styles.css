@@ -1,0 +1,144 @@
+/* ============ Base & Page Spacing ============ */
+:root {
+  --page-max: 1200px;
+  --gap: 24px;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #ef3dc2;
+}
+
+/* Entire content area spacing away from browser edges (per lab) */
+.skills-layout {
+  /* FLEXBOX 2: one row, two columns */
+  display: flex;                    /* (Lab step: add the style to specify flexbox 2) */
+  gap: var(--gap);
+  max-width: var(--page-max);
+  margin: 40px auto;                /* separates from window edges */
+  padding: 0 20px;
+}
+
+/* Left 3/4, Right 1/4 using flex/flex-basis (lab requirement) */
+.skills-left {
+  flex: 3 1 0;                      /* 3 parts of the row */
+  min-width: 0;                     /* prevents overflow issues */
+}
+
+.other-skills {
+  flex: 1 1 0;                      /* 1 part of the row */
+}
+
+/* ============ Centering ============ */
+/* One of the taught techniques: text-align for inline-level children */
+.centered {
+  text-align: center;
+  margin: 0;                        /* reset default */
+}
+
+/* Additional margin to separate heading from content (lab spacing step) */
+#page-title {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Intro paragraph spacing (and extra credit alignment—kept inside .skills-left) */
+.intro {
+  margin-bottom: 24px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ============ FLEXBOX 1: Five-column skills row ============ */
+.skills-row {
+  display: flex;                    /* (Lab step: add a single style declaration for row) */
+  justify-content: space-between;   /* (Lab step: fix squished icons with justify-content) */
+  align-items: flex-start;
+  flex-wrap: nowrap;                /* five across on wide screens */
+  gap: 16px;                        /* additional spacing between items */
+}
+
+/* Skill card (each of the five inner divs) */
+.skill {
+  flex: 0 1 18%;                    /* roughly 5 across with breathing room */
+  text-align: center;               /* centers inline contents */
+}
+
+.skill-icon {
+  width: 80px;                      /* (Lab: size icons with width property) */
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;               /* line break effect + spacing below */
+}
+
+.skill-name {
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* ============ Aside styling ============ */
+.other-skills {
+  background: #e890ec;
+  color: #ffffff;
+  border-radius: var(--radius);     /* (Lab: curved corners) */
+  padding: 20px;                    /* (Lab: extra space so text doesn’t squish) */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.other-skills h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.other-skills ul {
+  margin: 0;
+  padding-left: 18px;               /* room for list bullets */
+}
+
+/* ============ Responsive tweaks (optional but nice) ============ */
+@media (max-width: 900px) {
+  .skills-row { flex-wrap: wrap; }
+  .skill { flex: 1 1 calc(50% - 16px); } /* 2 per row */
+}
+
+@media (max-width: 640px) {
+  .skills-layout { flex-direction: column; } /* stack columns */
+  .skill { flex: 1 1 100%; }                 /* 1 per row for clarity */
+  .skill-icon { width: 72px; }
+}
+@media (max-width: 900px) {
+  nav a {
+    display: block;     /* switch from inline to block */
+    width: 100%;        /* full-width buttons */
+    padding: .75rem 1rem;
+  }
+  nav span { display: none; }  /* hide the pipes on small screens */
+  nav { gap: .5rem; }          /* if you’re using flex, this adds space */
+}
+
+.fluid-img { max-width: 100%; height: auto; display: block; }
+.contact-grid {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  /* key line for small screens */
+  flex-wrap: wrap;
+}
+
+/* reasonable starting sizes for desktop */
+.contact-form  { flex: 1 1 400px; }
+.contact-map   { flex: 1 1 400px; border: 0; min-height: 350px; width: 100%; }\
+
+nav { font-family: system-ui, sans-serif; }
+nav a { text-decoration: none; padding: .5rem .75rem; display: inline-block; }
+nav span { padding: 0 .25rem; }
