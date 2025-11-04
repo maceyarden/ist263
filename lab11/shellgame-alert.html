@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 11 — Shell Game (Alerts)</title>
+  <script>
+    // Shows a dialog when called
+    function WinnerMessage() {
+      alert('You Won');
+    }
+    function TryAgain() {
+      alert('Wrong Shell - Try Again');
+    }
+  </script>
+</head>
+<body>
+  <h1>Shell Game — Alert Version</h1>
+  <p>Pick a shell. The first shell is the winner.</p>
+
+  <!-- Replace src with your walnut/shell images -->
+  <img src="images/wanut1.jpg" alt="Shell 1 (winner)" onclick="WinnerMessage();" />
+  <img src="images/walnut2.jpg" alt="Shell 2" onclick="TryAgain();" />
+  <img src="images/walnut3.jpg" alt="Shell 3" onclick="TryAgain();" />
+</body>
+</html>
