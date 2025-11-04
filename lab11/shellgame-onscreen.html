@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 11 — Shell Game (Messages)</title>
+  <script>
+    // Use innerHTML to display messages on the page instead of alerts
+    function WinnerMessage() {
+      document.getElementById('message').innerHTML = '🎉 You Won!';
+    }
+    function TryAgain() {
+      document.getElementById('message').innerHTML = '❌ Wrong Shell — Try Again';
+    }
+  </script>
+</head>
+<body>
+  <h1>Shell Game — Message Version</h1>
+  <p>Pick a shell. The first shell is still the winner.</p>
+
+  <!-- Replace src with your walnut/shell images -->
+  <img src="images/walnut1.jpg" alt="Shell 1 (winner)" onclick="WinnerMessage();" />
+  <img src="images/walnut2.jpg" alt="Shell 2" onclick="TryAgain();" />
+  <img src="images/walnut3.jpg" alt="Shell 3" onclick="TryAgain();" />
+
+  <!-- Dynamic message target -->
+  <div id="message" aria-live="polite" style="margin-top:1rem;font-weight:bold;"></div>
+</body>
+</html>
