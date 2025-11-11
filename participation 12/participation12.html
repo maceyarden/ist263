@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participation</title>
+  <style>
+    div {
+      font-size: 36px;
+      text-align: center;
+      margin-top: 150px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="school" onclick="changeText()">Syracuse University</div>
+
+  <script>
+    function changeText() {
+      let div = document.getElementById("school");
+      div.innerHTML = "Orange Nation";
+      div.style.color = "orange";
+    }
+  </script>
+</body>
+</html>
