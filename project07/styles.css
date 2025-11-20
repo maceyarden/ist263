@@ -1,141 +1,96 @@
-/* -------------------------
-   Global Reset + Basics
--------------------------- */
+/* BASIC RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #a9b8da;
-    color: #222;
-    padding: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+  color: #222;
+  background-color: #fafafa;
+}
+
+/* SKIP LINK */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* NAVIGATION */
+.nav-flex {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.nav-flex a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.nav-flex a[aria-current="page"] {
+  border-bottom: 2px solid #d35400;
+}
+
+/* SECTION LAYOUT */
+.review-section {
+  margin-bottom: 2.5rem;
+}
+
+.rating {
+  font-size: 1.2rem;
+  color: #d35400;
+}
+
+/* FIGURES + IMAGE HANDLING */
+figure {
+  margin: 1rem 0;
 }
 
 img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
-/* -------------------------
-   Navigation
--------------------------- */
-nav ul.nav {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 0;
+/* GALLERY FLEXBOX */
+.gallery-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-nav ul.nav a {
-    text-decoration: none;
-    padding: 0.5rem 0.8rem;
-    background: #100baf;
-    color: #fff;
-    border-radius: 4px;
-    font-weight: bold;
+.gallery-flex figure {
+  flex: 1;
 }
 
-nav ul.nav a.active,
-nav ul.nav a:hover {
-    background: #4667d3;
-}
+/* MEDIA QUERIES */
+@media (min-width: 700px) {
+  .gallery-flex {
+    flex-direction: row;
+  }
 
-/* -------------------------
-   Header
--------------------------- */
-header {
-    margin-bottom: 2rem;
-}
+  .review-section {
+    max-width: 800px;
+  }
 
-h1 {
-    margin-top: 1rem;
-    font-size: 2.2rem;
-}
-
-.tagline {
-    margin-top: 0.5rem;
-    max-width: 700px;
-}
-
-/* -------------------------
-   Featured Section
--------------------------- */
-#intro-featured {
-    margin-bottom: 2rem;
-}
-
-#intro-featured figure {
-    margin-top: 1rem;
-}
-
-/* -------------------------
-   Restaurant Cards
--------------------------- */
-#restaurant-gallery {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.restaurant-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1rem;
-    width: calc(33% - 1rem);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.restaurant-card h3 a {
-    color: #333;
-    text-decoration: none;
-}
-
-.restaurant-card h3 a:hover {
-    text-decoration: underline;
-}
-
-/* -------------------------
-   Footer
--------------------------- */
-footer {
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* -------------------------
-   MEDIA QUERIES - RESPONSIVE
--------------------------- */
-
-/* Tablet */
-@media (max-width: 900px) {
-    .restaurant-card {
-        width: calc(50% - 1rem);
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    /* Mobile Nav: stack vertically */
-    nav ul.nav {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .restaurant-card {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
+  body {
+    margin: auto;
+    max-width: 1000px;
+  }
 }
