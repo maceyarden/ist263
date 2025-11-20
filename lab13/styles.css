@@ -87,7 +87,7 @@ html, body {
 
 /* ============ Aside styling ============ */
 .other-skills {
-  background: #e890ec;
+  background: #e8d0e9;
   color: #ffffff;
   border-radius: var(--radius);     /* (Lab: curved corners) */
   padding: 20px;                    /* (Lab: extra space so text doesn’t squish) */
