@@ -1,4 +1,6 @@
-/* BASIC RESET */
+/* ============================
+   GLOBAL RESET + BASE STYLES
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +10,14 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding: 1rem;
+  background: #f5f5f5;
   color: #222;
-  background-color: #fafafa;
+  padding: 1.5rem;
 }
 
-/* SKIP LINK */
+/* ============================
+   ACCESSIBILITY
+============================ */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -23,74 +27,152 @@ body {
   padding: 8px;
   z-index: 100;
 }
-
 .skip-link:focus {
   top: 0;
 }
 
-/* NAVIGATION */
+/* ============================
+   NAVIGATION
+============================ */
+nav {
+  margin-bottom: 1.5rem;
+}
+
 .nav-flex {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem 0;
+  list-style: none;
 }
 
 .nav-flex a {
   text-decoration: none;
   font-weight: bold;
-  color: #1a1a1a;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+}
+
+.nav-flex a:hover {
+  background: #ffe8d9;
 }
 
 .nav-flex a[aria-current="page"] {
-  border-bottom: 2px solid #d35400;
+  background: #f7c49b;
+  border-color: #e29552;
 }
 
-/* SECTION LAYOUT */
-.review-section {
-  margin-bottom: 2.5rem;
+/* ============================
+   HEADERS + TAGLINE
+============================ */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
 }
 
+.tagline {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* ============================
+   SECTION BOXES
+============================ */
+.section-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================
+   RATING BADGES
+============================ */
 .rating {
-  font-size: 1.2rem;
-  color: #d35400;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: #ffe9c4;
+  border-radius: 6px;
+  margin: 0.4rem 0 1rem 0;
+  color: #b85a00;
 }
 
-/* FIGURES + IMAGE HANDLING */
+/* ============================
+   FIGURES & IMAGES
+============================ */
 figure {
   margin: 1rem 0;
 }
 
 img {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* GALLERY FLEXBOX */
+/* ============================
+   RESTAURANT CARD GRID
+============================ */
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.restaurant-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border-left: 6px solid #eab676;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.restaurant-card h3 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.restaurant-card:hover {
+  background: #fff9f3;
+}
+
+/* Desktop Grid */
+@media (min-width: 750px) {
+  .card-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .restaurant-card {
+    width: calc(50% - 1rem);
+  }
+}
+
+/* ============================
+   GALLERY GRID
+============================ */
 .gallery-flex {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.gallery-flex figure {
-  flex: 1;
-}
-
-/* MEDIA QUERIES */
-@media (min-width: 700px) {
+@media (min-width: 750px) {
   .gallery-flex {
     flex-direction: row;
   }
-
-  .review-section {
-    max-width: 800px;
+  .gallery-flex figure {
+    flex: 1;
   }
+}
 
-  body {
-    margin: auto;
-    max-width: 1000px;
-  }
+/* ============================
+   FOOTER
+============================ */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
 }

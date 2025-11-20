@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Syracuse Eats | Home</title>
-  <meta name="description" content="Your quick guide to the best local restaurants in Syracuse, NY. Honest reviews, photos, and tips.">
+  <meta name="description" content="Quick guide to the best local restaurants in Syracuse. Reviews, photos, and tips.">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,69 +23,53 @@
 
   <h1>Syracuse Eats</h1>
   <p class="tagline">
-    Your go-to guide for the best local favorites. Whether you’re craving handmade pasta, smoky barbecue, 
-    or bold Mexican flavors, we’ve got honest reviews and quick tips for your next bite.
+    Your trusted guide to Syracuse’s best restaurants — honest reviews, top dishes, and insider tips.
   </p>
 </header>
 
 <main id="main">
 
-<!-- FEATURED SECTION -->
-<section id="featured" aria-labelledby="featured-heading" class="review-section">
-  <h2 id="featured-heading">Featured Spot</h2>
-
+<section class="section-box">
+  <h2>Featured Spot</h2>
   <figure>
-    <img src="./images/header.jpg" alt="A wooden table set with wine, bread, cheese, fruit, and shared plates">
-    <figcaption>Iconic Syracuse-style shared table: comfort food, social vibes, and fresh ingredients.</figcaption>
+    <img src="./images/header.jpg" alt="Shared table with wine, bread, cheese, and fruit.">
+    <figcaption>Classic Syracuse shared-table dining vibes.</figcaption>
   </figure>
 </section>
 
-<!-- RESTAURANT GALLERY SECTION -->
-<section id="restaurant-gallery" aria-labelledby="gallery-heading">
-  <h2 id="gallery-heading">Restaurants in This Guide</h2>
+<section class="section-box">
+  <h2>Restaurants in This Guide</h2>
 
-  <!-- CARD 1 -->
-  <article class="restaurant-card">
-    <h3><a href="pastabilities.html">Pastabilities</a></h3>
-    <p>Italian • $$ • Armory Square</p>
-    <p>Famous for its spicy Hot Tomato Oil, cozy for date nights or family dinners.</p>
+  <div class="card-grid">
 
-    <figure>
-      <img src="./images/pastabilities1.jpg" alt="Fresh pasta in tomato sauce with greens and cheese from Pastabilities">
-      <figcaption>Signature pasta from Pastabilities.</figcaption>
-    </figure>
+    <article class="restaurant-card">
+      <h3><a href="pastabilities.html">Pastabilities</a></h3>
+      <p class="rating" aria-label="4 out of 5 stars">★★★★☆</p>
+      <p>Italian • $$ • Armory Square</p>
+      <figure>
+        <img src="./images/pastabilities1.jpg" alt="Fresh pasta and tomato oil from Pastabilities">
+      </figure>
+    </article>
 
-    <span class="rating" aria-label="4 out of 5 stars">★★★★☆</span>
-  </article>
+    <article class="restaurant-card">
+      <h3><a href="more-reviews.html">Dinosaur BBQ</a></h3>
+      <p class="rating" aria-label="5 out of 5 stars">★★★★★</p>
+      <p>BBQ • $$ • Downtown</p>
+      <figure>
+        <img src="./images/dinobbq.jpg" alt="Barbecue platter with ribs and brisket">
+      </figure>
+    </article>
 
-  <!-- CARD 2 -->
-  <article class="restaurant-card">
-    <h3><a href="more-reviews.html">Dinosaur BBQ</a></h3>
-    <p>BBQ • $$ • Downtown Syracuse</p>
-    <p>Smoky, bold flavors, and lively local energy.</p>
+    <article class="restaurant-card">
+      <h3><a href="more-reviews.html">Alto Cinco</a></h3>
+      <p class="rating" aria-label="3 out of 5 stars">★★★☆☆</p>
+      <p>Mexican • $–$$ • Westcott</p>
+      <figure>
+        <img src="./images/altocinco.jpg" alt="Burritos and hot sauce bottles">
+      </figure>
+    </article>
 
-    <figure>
-      <img src="./images/dinobbq.jpg" alt="Barbecue platter with ribs, chicken, brisket, and cornbread from Dinosaur BBQ">
-      <figcaption>Smoked barbecue plates from Dinosaur BBQ.</figcaption>
-    </figure>
-
-    <span class="rating" aria-label="5 out of 5 stars">★★★★★</span>
-  </article>
-
-  <!-- CARD 3 -->
-  <article class="restaurant-card">
-    <h3><a href="more-reviews.html">Alto Cinco</a></h3>
-    <p>Mexican / Vegan options • $–$$ • Westcott</p>
-    <p>Big burritos, vegan nachos, and a legendary local favorite.</p>
-
-    <figure>
-      <img src="./images/altocinco.jpg" alt="Large burritos with rice and hot sauce bottles from Alto Cinco">
-      <figcaption>Loaded burritos from Alto Cinco.</figcaption>
-    </figure>
-
-    <span class="rating" aria-label="3 out of 5 stars">★★★☆☆</span>
-  </article>
-
+  </div>
 </section>
 
 </main>
