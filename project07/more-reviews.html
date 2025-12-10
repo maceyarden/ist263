@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dinosaur BBQ & Alto Cinco | Syracuse Eats</title>
   <meta name="description" content="Reviews, top dishes, and tips for Dinosaur BBQ and Alto Cinco in Syracuse, NY.">
+
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="32x32">
+
   <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
@@ -14,12 +18,20 @@
 
 <header>
   <nav aria-label="Main navigation">
-    <ul class="nav-flex">
-      <li><a href="index.html">Syracuse Eats (Home)</a></li>
-      <li><a href="pastabilities.html">Pastabilities</a></li>
-      <li><a href="more-reviews.html" aria-current="page">Dinosaur BBQ &amp; Alto Cinco</a></li>
-    </ul>
-  </nav>
+  <ul class="nav-flex">
+    <li><a href="index.html">Syracuse Eats (Home)</a></li>
+
+    <li class="dropdown">
+      <button type="button" class="dropbtn" aria-expanded="false" aria-controls="restaurant-menu">Restaurants ▾</button>
+      <ul class="dropdown-menu" id="restaurant-menu" role="menu" aria-hidden="true">
+        <li role="none"><a role="menuitem" href="pastabilities.html">Pastabilities</a></li>
+        <li role="none"><a role="menuitem" href="#dinosaur-bbq">Dinosaur BBQ</a></li>
+        <li role="none"><a role="menuitem" href="#alto-cinco">Alto Cinco</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
   <h1>More Syracuse Eats</h1>
 </header>
@@ -34,7 +46,7 @@
   <p>BBQ • $$ • Downtown</p>
 
   <figure>
-    <img src="./images.jpg/dinobbq.png" alt="Ribs, brisket, chicken, pulled pork and sides on a metal tray from Dinosaur BBQ">
+    <img src="./images/dinobbq.png" alt="Ribs, brisket, chicken, pulled pork and sides on a metal tray from Dinosaur BBQ">
     <figcaption>Smoked meats and classic sides from Dinosaur BBQ.</figcaption>
   </figure>
 
@@ -62,7 +74,7 @@
   <p>Mexican / Southwestern • $–$$ • Westcott</p>
 
   <figure>
-    <img src="./images.jpg/altocinco.png" alt="Stacked burrito halves with rice and beans in front of hot sauce bottles at Alto Cinco">
+    <img src="./images/altocinco.png" alt="Stacked burrito halves with rice and beans in front of hot sauce bottles at Alto Cinco">
     <figcaption>Loaded burritos from Alto Cinco.</figcaption>
   </figure>
 
@@ -87,6 +99,42 @@
   <p><a href="index.html">Back to Restaurants</a></p>
   <p>&copy; 2025 Syracuse Eats. Reviews compiled for visitors and students.</p>
 </footer>
+
+<!-- Small JS for accessible dropdown toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.dropbtn');
+  const menu = document.getElementById('restaurant-menu');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function (e) {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.setAttribute('aria-hidden', String(expanded));
+    menu.classList.toggle('open', !expanded);
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('open');
+    }
+  });
+
+  // close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('open');
+      btn.focus();
+    }
+  });
+});
+</script>
 
 </body>
 </html>
