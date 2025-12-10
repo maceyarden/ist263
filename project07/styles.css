@@ -176,3 +176,21 @@ footer {
   margin-top: 2rem;
   color: #666;
 }
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
