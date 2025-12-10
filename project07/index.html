@@ -22,15 +22,24 @@
     </style>
 </head>
 
+<body>
+
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header>
     <nav aria-label="Main navigation">
-        <ul class="nav-flex">
-            <li><a href="index.html" aria-current="page">Syracuse Eats (Home)</a></li>
-            <li><a href="pastabilities.html">Pastabilities</a></li>
-            <li><a href="more-reviews.html">Dinosaur BBQ &amp; Alto Cinco</a></li>
-        </ul>
+      <ul class="nav-flex">
+        <li><a href="index.html" aria-current="page">Syracuse Eats (Home)</a></li>
+
+        <li class="dropdown">
+          <button type="button" class="dropbtn" aria-expanded="false" aria-controls="restaurant-menu">Restaurants ▾</button>
+          <ul class="dropdown-menu" id="restaurant-menu" role="menu" aria-hidden="true">
+            <li role="none"><a role="menuitem" href="pastabilities.html">Pastabilities</a></li>
+            <li role="none"><a role="menuitem" href="more-reviews.html#dinosaur-bbq">Dinosaur BBQ</a></li>
+            <li role="none"><a role="menuitem" href="more-reviews.html#alto-cinco">Alto Cinco</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
 
     <h1>Syracuse Eats</h1>
@@ -44,7 +53,7 @@
 <section class="section-box">
     <h2>Featured Spot</h2>
     <figure>
-        <img src="./images.jpg/header.png" alt="Shared table with wine, bread, cheese, and fruit.">
+        <img src="./images/header.png" alt="Shared table with wine, bread, cheese, and fruit.">
     </figure>
 </section>
 
@@ -58,7 +67,7 @@
             <p class="rating" aria-label="4 out of 5 stars">★★★★☆</p>
             <p>Italian • $$ • Armory Square</p>
             <figure>
-                <img src="./images.jpg/pastabilities.png" alt="Fresh pasta and tomato oil from Pastabilities">
+                <img src="./images/pastabilities.png" alt="Fresh pasta and tomato oil from Pastabilities">
             </figure>
         </article>
 
@@ -67,7 +76,7 @@
             <p class="rating" aria-label="5 out of 5 stars">★★★★★</p>
             <p>BBQ • $$ • Downtown</p>
             <figure>
-                <img src="./images.jpg/dinobbq.png" alt="Barbecue platter with ribs and brisket">
+                <img src="./images/dinobbq.png" alt="Barbecue platter with ribs and brisket">
             </figure>
         </article>
 
@@ -76,7 +85,7 @@
             <p class="rating" aria-label="3 out of 5 stars">★★★☆☆</p>
             <p>Mexican • $$ • Westcott</p>
             <figure>
-                <img src="./images.jpg/altocinco.png" alt="Burritos and hot sauce bottles">
+                <img src="./images/altocinco.png" alt="Burritos and hot sauce bottles">
             </figure>
         </article>
 
@@ -88,6 +97,40 @@
 <footer>
     <p>&copy; 2025 Syracuse Eats. Local reviews for hungry people.</p>
 </footer>
+
+<!-- Small JS for accessible dropdown toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.dropbtn');
+  const menu = document.getElementById('restaurant-menu');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function (e) {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.setAttribute('aria-hidden', String(expanded));
+    menu.classList.toggle('open', !expanded);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('open');
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('open');
+      btn.focus();
+    }
+  });
+});
+</script>
 
 </body>
 </html>
