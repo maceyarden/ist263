@@ -50,7 +50,7 @@ nav {
   font-weight: bold;
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
-  background: #ffffff;
+  background: #ffffff;=
   border: 1px solid #ccc;
   transition: 0.2s;
 }
@@ -62,6 +62,47 @@ nav {
 .nav-flex a[aria-current="page"] {
   background: #f7c49b;
   border-color: #e29552;
+}
+/* ================================
+   DROPDOWN NAVIGATION
+   ================================ */
+
+.nav-flex li {
+  position: relative;
+}
+
+/* Hide submenu by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.25rem;
+  padding: 0;
+  list-style: none;
+  display: none;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 12rem;
+  z-index: 10;
+}
+
+.dropdown-menu li + li {
+  border-top: 1px solid #eeeeee;
+}
+
+/* Make submenu links full-width and remove outer border */
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+/* Show dropdown on hover or keyboard focus */
+.nav-flex li.dropdown:hover .dropdown-menu,
+.nav-flex li.dropdown:focus-within .dropdown-menu {
+  display: block;
 }
 
 /* ============================
@@ -171,74 +212,6 @@ img {
 /* ============================
    FOOTER
 ============================ */
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  color: #666;
-}
-.restaurant-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
 
-.card {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
-}
 
-.card img {
-  width: 100%;
-  border-radius: 6px;
-}
-/* Main nav style */
-.navbar {
-  background-color: #333;
-  padding: 10px;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-menu > li {
-  position: relative;
-}
-
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 10px;
-  display: block;
-}
-
-/* Dropdown menu */
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: #444;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none; /* hidden by default */
-}
-
-.dropdown-menu li a {
-  padding: 10px 15px;
-  white-space: nowrap;
-}
-
-/* Show menu on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  background: #555;
 }
